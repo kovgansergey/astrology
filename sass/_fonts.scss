@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Playfair Display Regular';
+  font-display: auto;
+  src: url('../fonts/PlayfairDisplay-Regular.eot');
+  src: url('../fonts/PlayfairDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/PlayfairDisplay-Regular.woff') format('woff'),
+    url('../fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Playfair Display Italic';
+  font-display: auto;
+  src: url('../fonts/PlayfairDisplay-Italic.eot');
+  src: url('../fonts/PlayfairDisplay-Italic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/PlayfairDisplay-Italic.woff') format('woff'),
+    url('../fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Geometria Regular';
+  font-display: auto;
+  src: url('../fonts/Geometria.eot');
+  src: url('../fonts/Geometria.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Geometria.woff') format('woff'),
+    url('../fonts/Geometria.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@mixin PDreg {
+  font-family: 'Playfair Display Regular', serif;
+}
+@mixin PDit {
+  font-family: 'Playfair Display Italic', serif;
+}
+@mixin geometria {
+  font-family: 'Geometria Regular', sans-serif;
+}

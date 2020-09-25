@@ -1,0 +1,50 @@
+.header
+  position: relative
+  &-bg
+    position: absolute
+    top: 0
+    right: 0
+    z-index: -1
+    width: 65%
+    height: 100%
+    background-color: #f2f4f7
+  &-contacts
+    padding: 15px 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &__logo
+      & .name
+        font-size: 24px
+    &__phone
+      margin-left: -250px
+      &-link-wrap
+        display: flex
+        align-items: center
+        & .phone-img
+          margin-right: 10px
+          width: 40px
+          height: 40px
+          display: flex
+          justify-content: center
+          align-items: center
+          background-color: $main-color
+          border-radius: 50%
+        & .phone-number
+          font-size: 14px
+          letter-spacing: 0.67px
+    &__social
+      display: flex
+      &-link
+        margin-left: 10px
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 40px
+        height: 40px
+        background-image: url("../img/header/border.png")
+        border-radius: 50%
+// @media (max-width: 1199px)
+// @media (max-width: 991px)
+// @media (max-width: 767px)
+// @media (max-width: 566px)
