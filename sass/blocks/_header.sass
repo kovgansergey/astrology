@@ -9,7 +9,7 @@
     height: 100%
     background-color: #f2f4f7
   &-contacts
-    padding: 15px 0
+    padding: 15px 0 20px
     display: flex
     justify-content: space-between
     align-items: center
@@ -42,8 +42,29 @@
         align-items: center
         width: 40px
         height: 40px
-        background-image: url("../img/header/border.png")
+        background: url("../img/header/border.png") no-repeat
         border-radius: 50%
+  &-content
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &__title
+      font-size: 60px
+    &__description
+      & .circle
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 104px
+        height: 104px
+        background: url("../img/header/round-text.png") no-repeat
+    &__img
+      position: relative
+      & .rings
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-51%, -50%)
 // @media (max-width: 1199px)
 // @media (max-width: 991px)
 // @media (max-width: 767px)

@@ -19,6 +19,37 @@ a
 	+PDreg
 .italic
 	+PDit
+.arrow
+	position: relative
+	width: 40px
+	height: 2px
+	background-color: #000
+	transition: 0.5s
+	&::before,
+	&::after
+		content: ''
+		position: absolute
+		right: 0
+		width: 7px
+		height: 2px
+		background-color: #000
+		transition: 0.5s
+	&::before
+		transform: rotate(45deg)
+		transform-origin: right top
+	&::after
+		transform: rotate(-45deg)
+		transform-origin: right bottom
+	&.active
+		height: 0
+		&::before,
+		&::after
+			width: 40px
+			transform-origin: center
+		&::before
+			transform: rotate(135deg)
+		&::after
+			transform: rotate(-135deg)
 @media (max-width: 1199px)
 	.container
 		width: 960px
