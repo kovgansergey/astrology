@@ -1,5 +1,6 @@
 .header
   position: relative
+  padding-bottom: 40px
   &-bg
     position: absolute
     top: 0
@@ -50,7 +51,15 @@
     align-items: center
     &__title
       font-size: 60px
+    & .description-text
+      display: none
+      margin-top: 18px
+      width: 280px
+      line-height: 18.67px
     &__description
+      margin-top: 50px
+      display: flex
+      align-items: center
       & .circle
         display: flex
         justify-content: center
@@ -58,6 +67,14 @@
         width: 104px
         height: 104px
         background: url("../img/header/round-text.png") no-repeat
+      &-text
+        margin-left: 65px
+      &-title
+        font-size: 24px
+      & .text
+        margin-top: 25px
+        width: 280px
+        line-height: 17.33px
     &__img
       position: relative
       & .rings
@@ -66,6 +83,64 @@
         left: 50%
         transform: translate(-51%, -50%)
 // @media (max-width: 1199px)
-// @media (max-width: 991px)
-// @media (max-width: 767px)
+@media (max-width: 991px)
+  .header
+    padding-bottom: 0
+    &-bg
+      width: 100%
+      height: 70px
+    &-contacts
+      &__phone
+        margin: 0
+    &-content
+      flex-direction: column
+      align-items: start
+      &__img
+        margin: 17px auto 0
+@media (max-width: 767px)
+  .header
+    overflow-x: hidden
+    &-bg
+      height: 62px
+    &-bottom-bg
+      position: absolute
+      bottom: 2px
+      left: 0
+      width: 100%
+      height: 306px
+      background-image: linear-gradient(to top, #d4c7bb 0%, #efe5dc 100%)
+    &-contacts
+      padding: 8px 0
+      &__phone
+        &-link-wrap
+          & .phone-img
+            margin: 0
+            width: 47px
+            height: 47px
+          & .phone-text
+            display: none
+      &__social
+        &-link
+          display: none
+        & .whatsapp
+          display: flex
+          margin: 0
+          width: 47px
+          height: 47px
+          background: linear-gradient(to top, #32ac3a 0%, #50c660 100%)
+    &-content
+      margin-top: 35px
+      &__title
+        font-size: 33px
+      & .description-text
+        display: block
+      &__description
+        margin-top: 25px
+        &-text
+          margin-left: 20px
+        &-title
+          font-size: 17px
+          line-height: 23.33px
+        & .text
+          display: none
 // @media (max-width: 566px)

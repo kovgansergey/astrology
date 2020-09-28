@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>homework</title>
+	<title>Астрология</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
 
@@ -12,6 +12,7 @@
 <body>
 	<header class="header">
 		<div class="header-bg"></div>
+		<div class="header-bottom-bg"></div>
 		<div class="container">
 			<div class="header-contacts">
 				<div class="header-contacts__logo">
@@ -48,8 +49,11 @@
 						</div>
 					</a>
 					<a href="#">
-						<div class="header-contacts__social-link">
-							<img src="img/header/whatsapp-icon.png" alt="whatsapp">
+						<div class="header-contacts__social-link whatsapp">
+							<picture>
+								<source srcset="img/header/whatsapp-icon_mob.png" media="(max-width: 767px)">
+								<img src="img/header/whatsapp-icon.png" alt="whatsapp">
+							</picture>
 						</div>
 					</a>
 				</div>
@@ -59,19 +63,27 @@
 				<div class="header-content__text">
 					<h1 class="title header-content__title">Астрология,<br>
 					<span class="italic">которая</span> работает</h1>
+					<p class="description-text">Профессиональный практикующий астролог,
+					автор и ведущая онлайн-семинаров, спикер</p>
 					<div class="header-content__description">
 						<div class="circle"><span class="arrow"></span></div>
 						<div class="header-content__description-text">
-							<p class="title header-content__description-title">Болеее 1 000<br>
+							<p class="title header-content__description-title">Более 1 000<br>
 							<span class="italic">довольных</span> клиентов</p>
-							<p>Профессиональный практикующий астролог,
+							<p class="text">Профессиональный практикующий астролог,
 							автор и ведущая онлайн-семинаров, спикер</p>
 						</div>
 					</div>
 				</div>
 				<div class="header-content__img">
-					<img src="img/header/main-img.png" alt="main-img" class="main-img">
-					<img src="img/header/rings.png" alt="rings" class="rings">
+					<picture>
+						<source srcset="img/header/main-img_mob.png" media="(max-width: 767px)">
+						<img src="img/header/main-img.png" alt="main-img" class="main-img">
+					</picture>
+					<picture>
+						<source srcset="img/header/rings_mob.png" media="(max-width: 767px)">
+						<img src="img/header/rings.png" alt="rings" class="rings">
+					</picture>
 				</div>
 			</div>
 			<!-- /.header-content -->

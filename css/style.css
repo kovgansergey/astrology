@@ -35,6 +35,7 @@ body {
   font-family: 'Geometria Regular', sans-serif;
   font-size: 12px;
   color: #000;
+  overflow-x: hidden;
 }
 
 h1, h2 {
@@ -65,7 +66,7 @@ a {
   width: 40px;
   height: 2px;
   background-color: #000;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
 .arrow::before, .arrow::after {
@@ -125,12 +126,13 @@ a {
 
 @media (max-width: 576px) {
   .container {
-    max-width: 300px;
+    max-width: 310px;
   }
 }
 
 .header {
   position: relative;
+  padding-bottom: 40px;
 }
 
 .header-bg {
@@ -204,6 +206,19 @@ a {
   font-size: 60px;
 }
 
+.header-content .description-text {
+  display: none;
+  margin-top: 18px;
+  width: 280px;
+  line-height: 18.67px;
+}
+
+.header-content__description {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+
 .header-content__description .circle {
   display: flex;
   justify-content: center;
@@ -211,6 +226,20 @@ a {
   width: 104px;
   height: 104px;
   background: url("../img/header/round-text.png") no-repeat;
+}
+
+.header-content__description-text {
+  margin-left: 65px;
+}
+
+.header-content__description-title {
+  font-size: 24px;
+}
+
+.header-content__description .text {
+  margin-top: 25px;
+  width: 280px;
+  line-height: 17.33px;
 }
 
 .header-content__img {
@@ -222,4 +251,84 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-51%, -50%);
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding-bottom: 0;
+  }
+  .header-bg {
+    width: 100%;
+    height: 70px;
+  }
+  .header-contacts__phone {
+    margin: 0;
+  }
+  .header-content {
+    flex-direction: column;
+    align-items: start;
+  }
+  .header-content__img {
+    margin: 17px auto 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    overflow-x: hidden;
+  }
+  .header-bg {
+    height: 62px;
+  }
+  .header-bottom-bg {
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 306px;
+    background-image: linear-gradient(to top, #d4c7bb 0%, #efe5dc 100%);
+  }
+  .header-contacts {
+    padding: 8px 0;
+  }
+  .header-contacts__phone-link-wrap .phone-img {
+    margin: 0;
+    width: 47px;
+    height: 47px;
+  }
+  .header-contacts__phone-link-wrap .phone-text {
+    display: none;
+  }
+  .header-contacts__social-link {
+    display: none;
+  }
+  .header-contacts__social .whatsapp {
+    display: flex;
+    margin: 0;
+    width: 47px;
+    height: 47px;
+    background: linear-gradient(to top, #32ac3a 0%, #50c660 100%);
+  }
+  .header-content {
+    margin-top: 35px;
+  }
+  .header-content__title {
+    font-size: 33px;
+  }
+  .header-content .description-text {
+    display: block;
+  }
+  .header-content__description {
+    margin-top: 25px;
+  }
+  .header-content__description-text {
+    margin-left: 20px;
+  }
+  .header-content__description-title {
+    font-size: 17px;
+    line-height: 23.33px;
+  }
+  .header-content__description .text {
+    display: none;
+  }
 }
