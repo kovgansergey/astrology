@@ -54,6 +54,7 @@ a {
 
 .title {
   font-family: 'Playfair Display Regular', serif;
+  font-size: 40px;
 }
 
 .italic {
@@ -121,11 +122,14 @@ a {
   .container {
     width: 540px;
   }
+  .title {
+    font-size: 23px;
+  }
 }
 
 @media (max-width: 576px) {
   .container {
-    max-width: 310px;
+    max-width: 315px;
   }
 }
 
@@ -325,5 +329,60 @@ a {
   }
   .header-content__description .text {
     display: none;
+  }
+}
+
+.capabilities {
+  padding-top: 45px;
+  padding-bottom: 50px;
+}
+
+.capabilities-wrap {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.capabilities-item {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+  text-align: center;
+}
+
+.capabilities-item__img {
+  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 87px;
+  height: 87px;
+  background-image: linear-gradient(to top, #252d40 0%, #4a5776 100%);
+  border-radius: 50%;
+}
+
+.capabilities-item__img .border {
+  position: absolute;
+  top: -4px;
+  left: 8px;
+  z-index: 1;
+}
+
+@media (max-width: 991px) {
+  .capabilities {
+    padding-top: 0;
+    padding-bottom: 35px;
+  }
+  .capabilities-item {
+    width: 115px;
+  }
+}
+
+@media (max-width: 566px) {
+  .capabilities {
+    margin-top: -5px;
   }
 }

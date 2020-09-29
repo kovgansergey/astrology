@@ -1,0 +1,40 @@
+.capabilities
+  padding-top: 45px
+  padding-bottom: 50px
+  &-wrap
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+  &-item
+    margin-top: 20px
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 180px
+    text-align: center
+    &__img
+      margin-bottom: 10px
+      position: relative
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 87px
+      height: 87px
+      background-image: linear-gradient(to top, #252d40 0%, #4a5776 100%)
+      border-radius: 50%
+      & .border
+        position: absolute
+        top: -4px
+        left: 8px
+        z-index: 1
+// @media (max-width: 1199px)
+@media (max-width: 991px)
+  .capabilities
+    padding-top: 0
+    padding-bottom: 35px
+    &-item
+      width: 115px
+// @media (max-width: 767px)
+@media (max-width: 566px)
+  .capabilities
+    margin-top: -5px
