@@ -20,6 +20,21 @@ a
 	font-size: 40px
 .italic
 	+PDit
+.btn
+	position: relative
+	cursor: pointer
+	border: none
+	outline: none
+	border-radius: 7px
+	font-weight: bold
+	& .btn-img
+		position: absolute
+		top: 50%
+		right: 15px
+		z-index: 1
+		transform: translateY(-50%)
+	&_light
+		background-image: linear-gradient(to top, #e6e8ec 0%, #f2f4f7 100%)
 .arrow
 	position: relative
 	width: 40px
@@ -51,6 +66,10 @@ a
 			transform: rotate(135deg)
 		&::after
 			transform: rotate(-135deg)
+@media (min-width: 992px)
+	.btn
+		&:hover
+			transform: scale(1.02)
 @media (max-width: 1199px)
 	.container
 		width: 960px

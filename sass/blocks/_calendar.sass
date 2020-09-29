@@ -1,0 +1,42 @@
+.calendar
+  padding-top: 40px
+  color: #fff
+  background-color: $main-color
+  overflow: hidden
+  &-wrap
+    display: flex
+    justify-content: space-between
+  &-text
+    position: relative
+    z-index: 2
+  &__content
+    margin: 20px 0
+    font-weight: bold
+  &-lists
+    display: flex
+  &-list
+    line-height: 17.33px
+    list-style: inside url("../img/calendar/list-marker.png")
+    &:first-child
+      margin-right: 70px
+  &__btn
+    margin-top: 35px
+    width: 240px
+    height: 33px
+  &-img
+    position: relative
+    & .moon-woman
+      position: relative
+      bottom: -3px
+      z-index: 2
+    & .moon
+      position: absolute
+      left: 50%
+      bottom: 0px
+      z-index: 1
+      transform: translateX(-50%)
+      width: 600px
+// @media (max-width: 1199px)
+// @media (max-width: 991px)
+// @media (max-width: 767px)
+// @media (max-width: 576px)

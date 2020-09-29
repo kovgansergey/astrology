@@ -61,6 +61,27 @@ a {
   font-family: 'Playfair Display Italic', serif;
 }
 
+.btn {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  font-weight: bold;
+}
+
+.btn .btn-img {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.btn_light {
+  background-image: linear-gradient(to top, #e6e8ec 0%, #f2f4f7 100%);
+}
+
 .arrow {
   position: relative;
   width: 40px;
@@ -104,6 +125,12 @@ a {
 
 .arrow.active::after {
   transform: rotate(-135deg);
+}
+
+@media (min-width: 992px) {
+  .btn:hover {
+    transform: scale(1.02);
+  }
 }
 
 @media (max-width: 1199px) {
@@ -381,8 +408,68 @@ a {
   }
 }
 
-@media (max-width: 566px) {
+@media (max-width: 576px) {
   .capabilities {
     margin-top: -5px;
   }
+}
+
+.calendar {
+  padding-top: 40px;
+  color: #fff;
+  background-color: #2f3a53;
+  overflow: hidden;
+}
+
+.calendar-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar-text {
+  position: relative;
+  z-index: 2;
+}
+
+.calendar__content {
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.calendar-lists {
+  display: flex;
+}
+
+.calendar-list {
+  line-height: 17.33px;
+  list-style: inside url("../img/calendar/list-marker.png");
+}
+
+.calendar-list:first-child {
+  margin-right: 70px;
+}
+
+.calendar__btn {
+  margin-top: 35px;
+  width: 240px;
+  height: 33px;
+}
+
+.calendar-img {
+  position: relative;
+}
+
+.calendar-img .moon-woman {
+  position: relative;
+  bottom: -3px;
+  z-index: 2;
+}
+
+.calendar-img .moon {
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  z-index: 1;
+  transform: translateX(-50%);
+  width: 600px;
 }
