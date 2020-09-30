@@ -57,6 +57,11 @@ a {
   font-size: 40px;
 }
 
+.sub-title {
+  font-family: 'Playfair Display Regular', serif;
+  font-size: 23px;
+}
+
 .italic {
   font-family: 'Playfair Display Italic', serif;
 }
@@ -82,7 +87,13 @@ a {
   background-image: linear-gradient(to top, #e6e8ec 0%, #f2f4f7 100%);
 }
 
+.btn_dark {
+  color: #fff;
+  background-image: linear-gradient(to top, #252d40 0%, #4a5776 100%);
+}
+
 .arrow {
+  display: block;
   position: relative;
   width: 40px;
   height: 2px;
@@ -504,4 +515,120 @@ a {
   .calendar-img .moon {
     width: 520px;
   }
+}
+
+.consultation {
+  padding: 45px 0;
+  background-color: #f2f4f7;
+}
+
+.consultation .line {
+  margin: 25px 0;
+}
+
+.consultation .line:last-child {
+  margin-bottom: 0;
+}
+
+.consultation-panel {
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.consultation-panel__content {
+  width: 685px;
+}
+
+.consultation-panel__list {
+  margin-top: 20px;
+  list-style: none;
+  width: 575px;
+}
+
+.consultation-panel__list-item {
+  margin-bottom: 20px;
+  line-height: 17.33px;
+}
+
+.consultation-panel__list-item:not(:first-child) {
+  display: none;
+}
+
+.consultation-panel__wrap {
+  display: flex;
+}
+
+.consultation-panel__wrap .number {
+  margin-bottom: 5px;
+}
+
+.consultation-panel__duration {
+  margin-right: 50px;
+}
+
+.consultation-panel__banner {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 340px;
+  background-color: #edf0f3;
+}
+
+.consultation-panel__banner .banner__content {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+}
+
+.consultation-panel__banner .banner__title {
+  margin-bottom: 20px;
+}
+
+.consultation-panel__banner .banner__wrap {
+  display: flex;
+}
+
+.consultation-panel__banner .banner__btn {
+  margin-top: 50px;
+  width: 240px;
+  height: 34px;
+}
+
+.consultation-panel__banner .banner__img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.consultation-panel__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 108px;
+  height: 105px;
+  background: url("../img/consultation/ring.png") no-repeat;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.consultation-panel.active .consultation-panel__list {
+  padding-left: 18px;
+  list-style: url("../img/consultation/list-marker.png");
+  width: 100%;
+}
+
+.consultation-panel.active .consultation-panel__list-item:not(:first-child) {
+  display: list-item;
+}
+
+.consultation-panel.active .consultation-panel__wrap {
+  display: none;
+}
+
+.consultation-panel.active .consultation-panel__banner {
+  display: block;
 }

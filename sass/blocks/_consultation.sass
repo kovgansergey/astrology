@@ -1,0 +1,81 @@
+.consultation
+  padding: 45px 0
+  background-color: #f2f4f7
+  & .line
+    margin: 25px 0
+    &:last-child
+      margin-bottom: 0
+  &-panel
+    display: flex
+    justify-content: space-around
+    overflow: hidden
+    &__content
+      width: 685px
+    &__list
+      margin-top: 20px
+      list-style: none
+      width: 575px
+      &-item
+        margin-bottom: 20px
+        line-height: 17.33px
+        &:not(:first-child)
+          display: none
+    &__wrap
+      display: flex
+      & .number
+        margin-bottom: 5px
+    &__duration
+      margin-right: 50px
+    &__banner
+      display: none
+      position: relative
+      width: 100%
+      height: 340px
+      background-color: #edf0f3
+      & .banner
+        &__content
+          position: absolute
+          left: 20px
+          top: 50%
+          z-index: 2
+          transform: translateY(-50%)
+        &__title
+          margin-bottom: 20px
+        &__wrap
+          display: flex
+        &__btn
+          margin-top: 50px
+          width: 240px
+          height: 34px
+        &__img
+          position: absolute
+          right: 0
+          bottom: 0
+          z-index: 1
+    &__btn
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 108px
+      height: 105px
+      background: url("../img/consultation/ring.png") no-repeat
+      border-radius: 50%
+      cursor: pointer
+    &.active
+      & .consultation
+        &-panel
+          &__list
+            padding-left: 18px
+            list-style: url("../img/consultation/list-marker.png")
+            width: 100%
+            &-item
+              &:not(:first-child)
+                display: list-item
+          &__wrap
+            display: none
+          &__banner
+            display: block
+// @media (max-width: 1199px)
+// @media (max-width: 991px)
+// @media (max-width: 767px)
+// @media (max-width: 576px)
