@@ -1,11 +1,11 @@
 .calendar
-  padding-top: 40px
   color: #fff
   background-color: $main-color
   overflow: hidden
   &-wrap
     display: flex
     justify-content: space-between
+    align-items: center
   &-text
     position: relative
     z-index: 2
@@ -20,7 +20,7 @@
     &:first-child
       margin-right: 70px
   &__btn
-    margin-top: 35px
+    margin-top: 25px
     width: 240px
     height: 33px
   &-img
@@ -37,6 +37,25 @@
       transform: translateX(-50%)
       width: 600px
 // @media (max-width: 1199px)
-// @media (max-width: 991px)
-// @media (max-width: 767px)
+@media (max-width: 991px)
+  .calendar
+    padding-top: 35px
+    &-wrap
+      flex-direction: column
+      align-items: start
+    &-img
+      margin: 35px auto 0
+@media (max-width: 767px)
+  .calendar
+    &-lists
+      flex-direction: column
+    &__btn
+      width: 100%
+      height: 40px
+    &-img
+      margin-top: 20px
+      & .moon-woman
+        width: 300px
+      & .moon
+        width: 520px
 // @media (max-width: 576px)

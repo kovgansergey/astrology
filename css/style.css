@@ -415,7 +415,6 @@ a {
 }
 
 .calendar {
-  padding-top: 40px;
   color: #fff;
   background-color: #2f3a53;
   overflow: hidden;
@@ -424,6 +423,7 @@ a {
 .calendar-wrap {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .calendar-text {
@@ -450,7 +450,7 @@ a {
 }
 
 .calendar__btn {
-  margin-top: 35px;
+  margin-top: 25px;
   width: 240px;
   height: 33px;
 }
@@ -472,4 +472,36 @@ a {
   z-index: 1;
   transform: translateX(-50%);
   width: 600px;
+}
+
+@media (max-width: 991px) {
+  .calendar {
+    padding-top: 35px;
+  }
+  .calendar-wrap {
+    flex-direction: column;
+    align-items: start;
+  }
+  .calendar-img {
+    margin: 35px auto 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .calendar-lists {
+    flex-direction: column;
+  }
+  .calendar__btn {
+    width: 100%;
+    height: 40px;
+  }
+  .calendar-img {
+    margin-top: 20px;
+  }
+  .calendar-img .moon-woman {
+    width: 300px;
+  }
+  .calendar-img .moon {
+    width: 520px;
+  }
 }
