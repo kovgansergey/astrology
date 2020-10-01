@@ -618,7 +618,7 @@ a {
 }
 
 .consultation-panel.active .consultation-panel__content {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .consultation-panel.active .consultation-panel__list {
