@@ -543,7 +543,8 @@ a {
 .consultation-panel__list {
   margin-top: 20px;
   list-style: none;
-  width: 575px;
+  max-width: 575px;
+  width: 100%;
 }
 
 .consultation-panel__list-item {
@@ -602,6 +603,7 @@ a {
   right: 0;
   bottom: 0;
   z-index: 1;
+  height: 100%;
 }
 
 .consultation-panel__btn {
@@ -615,10 +617,14 @@ a {
   cursor: pointer;
 }
 
+.consultation-panel.active .consultation-panel__content {
+  overflow-x: hidden;
+}
+
 .consultation-panel.active .consultation-panel__list {
   padding-left: 18px;
   list-style: url("../img/consultation/list-marker.png");
-  width: 100%;
+  max-width: 100%;
 }
 
 .consultation-panel.active .consultation-panel__list-item:not(:first-child) {
@@ -631,4 +637,43 @@ a {
 
 .consultation-panel.active .consultation-panel__banner {
   display: block;
+}
+
+@media (max-width: 991px) {
+  .consultation-panel {
+    flex-direction: column;
+  }
+  .consultation-panel__content {
+    margin-top: 20px;
+    width: 100%;
+  }
+  .consultation-panel__btn {
+    margin: 25px auto 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .consultation-panel__banner {
+    height: 307px;
+  }
+}
+
+@media (max-width: 576px) {
+  .consultation-panel__banner {
+    margin-top: 140px;
+  }
+  .consultation-panel__banner .banner__content {
+    top: -125px;
+    left: 0;
+    transform: translateY(0);
+    width: 100%;
+  }
+  .consultation-panel__banner .banner__title {
+    display: none;
+  }
+  .consultation-panel__banner .banner__btn {
+    margin-top: 25px;
+    width: 100%;
+    height: 40px;
+  }
 }
