@@ -48,3 +48,11 @@ accordeon.addEventListener('click', event => {
   }
 
 });
+
+// слайдер с отзывами Видео
+// var videoSwiper = new Swiper('.comments__video', {
+//   slidesPerView: 5,
+//   spaceBetween: 5,
+//   centeredSlides: true,
+//   loop: true
+// });
