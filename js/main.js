@@ -50,9 +50,26 @@ accordeon.addEventListener('click', event => {
 });
 
 // слайдер с отзывами Видео
-// var videoSwiper = new Swiper('.comments__video', {
-//   slidesPerView: 5,
-//   spaceBetween: 5,
-//   centeredSlides: true,
-//   loop: true
-// });
+var videoSwiper = new Swiper('.comments__video-swiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 20,
+  loop: true,
+  autoplay: {
+    delay: 5000
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    },
+    992: {
+      slidesPerView: 4,
+      spaceBetween: 26
+    },
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 60
+    }
+  }
+});
+

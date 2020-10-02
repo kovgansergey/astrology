@@ -1,5 +1,7 @@
 .comments
   padding-top: 50px
+  padding-bottom: 150px
+  overflow: hidden
   &__content
     list-style: none
   &__item
@@ -13,6 +15,7 @@
       border-radius: 50%
       vertical-align: super
   &__video
+    margin-top: 25px
     overflow: hidden
     & .video-slide
       width: 240px
@@ -81,7 +84,25 @@
           &:hover
             &::before
               opacity: 0.6
-// @media (max-width: 1199px)
+@media (max-width: 1199px)
+  .comments
+    &__video
+      & .video-slide
+        width: 220px
+      & .video-img
+        height: 220px
+        &__play-btn
+          width: 53px
+          height: 53px
 // @media (max-width: 991px)
-// @media (max-width: 767px)
+@media (max-width: 767px)
+  .comments
+    &__video
+      overflow: visible
+      & .video-slide
+        width: 200px
+      & .video-img
+        height: 200px
+      & .video-text
+        display: none
 // @media (max-width: 576px)
