@@ -699,6 +699,14 @@ a {
   vertical-align: super;
 }
 
+.comments__item-video {
+  margin-top: 10px;
+}
+
+.comments__item-instagram {
+  margin-top: 50px;
+}
+
 .comments__video {
   margin-top: 25px;
   overflow: hidden;
