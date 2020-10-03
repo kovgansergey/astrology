@@ -1,7 +1,9 @@
+'use strict';
+
+// скрипт аккордеона в секции Консультации
 const accordeon = document.querySelector('.consultation-accordeon'),
   accordeonPanels = accordeon.querySelectorAll('.consultation-panel');
 
-// скрипт аккордеона в секции Консультации
 function togglePanel(button) {
   const panel = button.closest('.consultation-panel'),
     arrow = button.querySelector('.arrow');
@@ -73,3 +75,20 @@ var videoSwiper = new Swiper('.comments__video-swiper', {
   }
 });
 
+// слайдеры с отзывами Инстаграм
+// первый слайдер с пользователями
+var instaUserSwiper = new Swiper('.comments__instagram-user-swiper', {
+  slidesPerView: 'auto',
+  loop: true,
+  slideToClickedSlide: true,
+  navigation: {
+    nextEl: '.comments__instagram-next',
+    prevEl: '.comments__instagram-prev'
+  }
+});
+// второй слайдер с текстом отзывов
+var instaCommentSwiper = new Swiper('.comments__instagram-comment-swiper');
+// синхронизация второго слайдера с первым
+instaUserSwiper.on('slideChange', () => {
+  instaCommentSwiper.slideTo(instaUserSwiper.realIndex);
+});
