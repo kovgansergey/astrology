@@ -1,0 +1,166 @@
+.courses
+  padding: 25px 0
+  color: #fff
+  background: $main-color url("../img/courses/bg-img.jpg") right/contain no-repeat
+  &-wrap
+    position: relative
+    display: flex
+    justify-content: space-between
+  &-item
+    margin-top: 20px
+  &-card
+    width: 340px
+    border: 1px solid #fff
+    &__title
+      padding: 10px 20px
+      background-image: linear-gradient(to top, #2f3a53 0%, #4a5776 100%)
+    &__content
+      padding: 15px 20px
+      color: #000
+      background-color: #fff
+      &-title
+        font-weight: bold
+        margin-bottom: 8px
+      &-list
+        padding-left: 18px
+        list-style: url("../img/courses/list-marker.png")
+        line-height: 18.33px
+      &-cost
+        margin-top: 5px
+        &-old
+          position: relative
+          margin-left: 7px
+          +PDreg
+          font-size: 14px
+          vertical-align: super
+          color: #a40202
+          &::before
+            content: ''
+            position: absolute
+            top: 60%
+            left: 0
+            width: 100%
+            height: 1px
+            background-color: #a40202
+      &-buttons
+        display: flex
+        justify-content: space-between
+        & .courses__btn
+          margin-top: 10px
+          width: 135px
+          height: 33px
+    &-open
+      & .btn-img
+        display: none
+    &-wait
+      & .courses__btn
+        width: 100%
+    &-detail
+      display: none
+      position: absolute
+      top: 20px
+      left: 0
+      z-index: 5
+      width: 1140px
+      &__bg
+        position: fixed
+        top: 0
+        left: 0
+        z-index: -1
+        width: 100vw
+        height: 100vh
+        background-color: #000
+        opacity: 0.5
+      & .courses-card
+        width: 100%
+        &__title
+          position: relative
+          display: flex
+          justify-content: space-between
+          flex-wrap: wrap
+          padding: 25px 185px
+          & .courses-card__content-cost
+            margin: 0
+            &-old
+              color: #fff
+          & .close-btn
+            position: absolute
+            top: -60px
+            right: -5px
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 40px
+            height: 40px
+            cursor: pointer
+            & .arrow
+              &::before,
+              &::after
+                background-color: #fff
+        &__content
+          padding: 25px 185px
+          &-list
+            margin-bottom: 20px
+      & .courses__btn
+        width: 240px
+        height: 33px
+@media (max-width: 1199px)
+  .courses
+    &-card
+      width: 315px
+      &__title
+        padding: 10px 12px
+      &__content
+        padding: 15px 12px
+      &-detail
+        width: 960px
+        & .courses-card
+          &__title
+            padding: 25px 95px
+          &__content
+            padding: 25px 95px
+@media (max-width: 991px)
+  .courses
+    &-item
+      &:last-child
+        display: none
+    &-card
+      &-detail
+        width: 720px
+        & .courses-card
+          &__title
+            padding: 25px 50px
+          &__content
+            padding: 25px 50px
+@media (max-width: 767px)
+  .courses
+    padding: 40px 0
+    background: $main-color url("../img/courses/bg-mobile-img.jpg") bottom/cover no-repeat
+    &-wrap
+      flex-direction: column
+      align-items: center
+    &-card
+      &__content
+        &-buttons
+          flex-direction: column-reverse
+          & .courses__btn
+            width: 100%
+            height: 40px
+      &-open
+        & .btn-img
+          display: block
+      &-detail
+        width: 540px
+        & .courses-card
+          &__title
+            padding: 15px 12px
+          &__content
+            padding: 15px 12px
+        & .courses__btn
+          width: 100%
+          height: 40px
+@media (max-width: 576px)
+  .courses
+    &-card
+      &-detail
+        width: 315px

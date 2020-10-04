@@ -92,3 +92,117 @@ var instaCommentSwiper = new Swiper('.comments__instagram-comment-swiper');
 instaUserSwiper.on('slideChange', () => {
   instaCommentSwiper.slideTo(instaUserSwiper.realIndex);
 });
+
+// открытие-закрытие подробного онлайн курса
+const courses = document.querySelector('.courses');
+
+courses.addEventListener('click', event => {
+  const target = event.target;
+
+  if (target.closest('.detail-btn')) {
+    target.closest('.courses-item').querySelector('.courses-card-detail').style.display = 'block';
+  }
+
+  if (target.closest('.close-btn') || target.closest('.courses-card-detail__bg')) {
+    target.closest('.courses-card-detail').style.display = '';
+  }
+});
+
+// таймер будущих онлайн курсов
+function countTimer(selector, deadline) {
+  const coursesCard = document.querySelector(selector),
+    timerContent = coursesCard.querySelector('.timer');
+
+  function getTimeRemaining() {
+    const dateStop = new Date(deadline).getTime();
+    const dateNow = new Date().getTime();
+    const timeRemaining = (dateStop - dateNow) / 1000;
+    const seconds = Math.floor(timeRemaining % 60);
+    const minutes = Math.floor((timeRemaining / 60) % 60);
+    const hours = Math.floor((timeRemaining / 3600) % 24);
+    const days = Math.floor(timeRemaining / 86400);
+    return { timeRemaining, days, hours, minutes, seconds };
+  }
+
+  function timerNumber(n) {
+    if (n <= 9) {
+      return '0' + n;
+    } else {
+      return n;
+    }
+  }
+
+  function checkDays(n) {
+    if (n.toString().slice(-1) === '1' && n !== 11) {
+      return 'день';
+    } else if (n.toString().slice(-1) === '2' || n.toString().slice(-1) === '3' || n.toString().slice(-1) === '4') {
+      if (n !== 12 && n !== 13 && n !== 14) {
+        return 'дня';
+      } else {
+        return 'дней';
+      }
+    } else {
+      return 'дней';
+    }
+  }
+
+  function checkHours(n) {
+    if (n.toString().slice(-1) === '1' && n !== 11) {
+      return 'час';
+    } else if (n.toString().slice(-1) === '2' || n.toString().slice(-1) === '3' || n.toString().slice(-1) === '4') {
+      if (n !== 12 && n !== 13 && n !== 14) {
+        return 'часа';
+      } else {
+        return 'часов';
+      }
+    } else {
+      return 'часов';
+    }
+  }
+
+  function checkMinutes(n) {
+    if (n.toString().slice(-1) === '1' && n !== 11) {
+      return 'минута';
+    } else if (n.toString().slice(-1) === '2' || n.toString().slice(-1) === '3' || n.toString().slice(-1) === '4') {
+      if (n !== 12 && n !== 13 && n !== 14) {
+        return 'минуты';
+      } else {
+        return 'минут';
+      }
+    } else {
+      return 'минут';
+    }
+  }
+
+  function checkSeconds(n) {
+    if (n.toString().slice(-1) === '1' && n !== 11) {
+      return 'секунда';
+    } else if (n.toString().slice(-1) === '2' || n.toString().slice(-1) === '3' || n.toString().slice(-1) === '4') {
+      if (n !== 12 && n !== 13 && n !== 14) {
+        return 'секунды';
+      } else {
+        return 'секунд';
+      }
+    } else {
+      return 'секунд';
+    }
+  }
+
+  const timerId = setInterval(() => {
+    const timer = getTimeRemaining();
+
+    if (timer.timeRemaining < 0) {
+      clearInterval(timerId);
+      return;
+    }
+    
+    timerContent.textContent = `${timerNumber(timer.days)} ${checkDays(timer.days)} : 
+                                ${timerNumber(timer.hours)} ${checkHours(timer.hours)} : 
+                                ${timerNumber(timer.minutes)} ${checkMinutes(timer.minutes)} : 
+                                ${timerNumber(timer.seconds)} ${checkSeconds(timer.seconds)}`;
+  }, 1000);
+
+}
+
+countTimer('.courses-card-wait1', '17 october 2020');
+countTimer('.courses-card-wait2', '7 november 2020');
