@@ -1,0 +1,59 @@
+.articles
+  padding: 60px 0 30px
+  background-color: #f3f5f8
+  &-wrap
+    margin-top: 20px
+    overflow: hidden
+  &-slide
+    width: 270px
+  &__img
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 175px
+    padding: 10px
+    background: url("../img/articles/bg-slide-img.jpg") no-repeat
+    background-size: cover
+    & img
+      object-fit: contain
+      width: 100%
+      height: 100%
+  &__content
+    padding: 10px 15px
+    background-color: #fff
+    &-title
+      font-weight: bold
+      line-height: 14px
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+    &-date
+      margin-top: 5px
+      font-size: 10px
+  &-arrows
+    margin: 30px auto 0
+    display: flex
+    justify-content: space-between
+    width: 100px
+  &-arrow
+    display: flex
+    align-items: center
+    height: 14px
+    cursor: pointer
+    outline: none
+@media (min-width: 992px)
+  .articles__link:hover .articles__content
+    text-decoration: underline
+// @media (max-width: 1199px)
+// @media (max-width: 991px)
+@media (max-width: 767px)
+  .articles
+    padding: 40px 0 35px
+    &-slide
+      width: 230px
+    &__img
+      height: 165px
+    &-arrows
+      width: 160px
+// @media (max-width: 576px)

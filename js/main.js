@@ -204,5 +204,26 @@ function countTimer(selector, deadline) {
 
 }
 
-countTimer('.courses-card-wait1', '17 october 2020');
+countTimer('.courses-card-wait1', '17 october 2020 13:00:00');
 countTimer('.courses-card-wait2', '7 november 2020');
+
+// слайдер со статьями
+var articlesSwiper = new Swiper('.articles-swiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 15,
+  loop: true,
+  navigation: {
+    nextEl: '.articles-next',
+    prevEl: '.articles-prev'
+  },
+  breakpoints: {
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 75
+    },
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 20
+    }
+  }
+});
