@@ -5,10 +5,13 @@
   z-index: 10
   width: 100vw
   height: 100vh
-  display: flex
+  display: none
   justify-content: center
   align-items: center
   background-color: rgba(0, 0, 0, 0.5)
+  overflow: auto
+  &.active
+    display: flex
   &__dialog
     position: relative
     padding: 25px 65px
@@ -35,8 +38,10 @@
     margin: 25px 0
   &__content
     padding: 0 20px
+    text-align: center
     & .form
       &__input
+        margin-bottom: 13px
         padding: 0 20px
         width: 420px
         height: 34px
@@ -44,9 +49,59 @@
         border-radius: 7px
         border: none
         outline: none
+        &-question
+          padding: 10px 20px
+          height: 170px
+          line-height: 18px
         &-block
           position: relative
+      &__btn
+        margin-top: 13px
+        width: 240px
+        height: 34px
+      &__policy
+        margin: 10px auto 0
+        width: 340px
+        font-size: 10px
+        line-height: 12px
+        &-link
+          text-decoration: underline
 // @media (max-width: 1199px)
 // @media (max-width: 991px)
-// @media (max-width: 767px)
-// @media (max-width: 576px)
+@media (max-width: 767px)
+  .popup
+    align-items: start
+    &__dialog
+      margin: 25px 0
+      padding: 15px 50px
+    &__close
+      top: -6px
+      & .arrow
+        &::before,
+        &::after
+          background-color: #000
+    &__line
+      margin: 20px 0
+    &__content
+      & .form
+        &__input
+          width: 400px
+          &-question
+            height: 110px
+        &__btn
+          width: 100%
+          height: 40px
+@media (max-width: 576px)
+  .popup
+    &__dialog
+      padding: 15px
+    &__title
+      padding: 0 10px
+      width: 285px
+    &__content
+      padding: 0 10px
+      & .form
+        &__input
+          width: 265px
+        &__policy
+          width: 265px

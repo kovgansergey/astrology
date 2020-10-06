@@ -1115,7 +1115,7 @@
 			</div>
 			<hr class="popup__line">
 			<div class="popup__content">
-				<form class="popup__form form recall-form">
+				<form class="popup__form form recall-form" id="recall-form">
 					<div class="form__input-block">
 						<input type="text" class="form__input" name="user_name" placeholder="Как вас зовут" required>
 					</div>
@@ -1123,11 +1123,11 @@
 						<input type="text" class="form__input" name="user_phone" placeholder="Ваш номер телефона" required>
 					</div>
 					<div class="form__input-block">
-						<input type="text" class="form__input" name="user_question" placeholder="Можете написать свой вопрос">
+						<textarea type="text" class="form__input form__input-question" name="user_question" placeholder="Можете написать свой вопрос"></textarea>
 					</div>
 					<button class="btn btn_dark form__btn">Отправить</button>
 					<p class="form__policy">Оставляя свои данные в форме, вы подтверждаете свое согласие
-						с <a href="#" class="form__policy-link">Политикой конфиденциальности</a>и получением рассылки
+						с&nbsp;<a href="#" class="form__policy-link">Политикой конфиденциальности</a> и&nbsp;получением рассылки
 					</p>
 				</form>
 			</div>
