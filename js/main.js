@@ -1,5 +1,29 @@
 'use strict';
 
+// функция закрытия модального окна
+function closePopup(event) {
+  const target = event.target,
+    popup = target.closest('.popup');
+
+  if (target.closest('.popup__close') || !target.closest('.popup__dialog')) {
+    popup.classList.remove('active');
+    document.querySelector('body').style.overflow = '';
+    popup.removeEventListener('click', closePopup);
+  }
+}
+
+// открытие модального окна Заказать звонок
+const phoneCall = document.querySelector('.phone-call'),
+  recallPopup = document.querySelector('.recall-popup'),
+  orderPopup = document.querySelector('.order-popup');
+
+phoneCall.addEventListener('click', event => {
+  event.preventDefault();
+  recallPopup.classList.add('active');
+  document.querySelector('body').style.overflow = 'hidden';
+  recallPopup.addEventListener('click', closePopup);
+});
+
 // скрипт аккордеона в секции Консультации
 const accordeon = document.querySelector('.consultation-accordeon'),
   accordeonPanels = accordeon.querySelectorAll('.consultation-panel');
@@ -42,6 +66,20 @@ function togglePanel(button) {
     }
 }
 
+// открытие модального окна Оформить заказ с подстановкой названия и цены
+function openOrderPopup(banner) {
+  const bannerCourseName = banner.querySelector('.course-name'),
+    bannerCourseCost = banner.querySelector('.course-cost'),
+    formOrderName = orderPopup.querySelector('.form__order-name'),
+    formOrderCost = orderPopup.querySelector('.form__order-cost');
+
+  formOrderName.value = bannerCourseName.textContent;
+  formOrderCost.value = bannerCourseCost.textContent;
+  orderPopup.classList.add('active');
+  document.querySelector('body').style.overflow = 'hidden';
+  orderPopup.addEventListener('click', closePopup);
+}
+
 accordeon.addEventListener('click', event => {
   const target = event.target;
 
@@ -49,6 +87,9 @@ accordeon.addEventListener('click', event => {
     togglePanel(target.closest('.consultation-panel__btn'));
   }
 
+  if (target.closest('.banner__btn')) {
+    openOrderPopup(target.closest('.banner'));
+  }
 });
 
 // слайдер с отзывами Видео
