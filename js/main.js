@@ -24,6 +24,20 @@ phoneCall.addEventListener('click', event => {
   recallPopup.addEventListener('click', closePopup);
 });
 
+// открытие модального окна Оформить заказ с подстановкой названия и цены
+function openOrderPopup(banner) {
+  const bannerCourseName = banner.querySelector('.course-name'),
+    bannerCourseCost = banner.querySelector('.course-cost'),
+    formOrderName = orderPopup.querySelector('.form__order-name'),
+    formOrderCost = orderPopup.querySelector('.form__order-cost');
+
+  formOrderName.value = bannerCourseName.textContent;
+  formOrderCost.value = bannerCourseCost.textContent;
+  orderPopup.classList.add('active');
+  document.querySelector('body').style.overflow = 'hidden';
+  orderPopup.addEventListener('click', closePopup);
+}
+
 // скрипт аккордеона в секции Консультации
 const accordeon = document.querySelector('.consultation-accordeon'),
   accordeonPanels = accordeon.querySelectorAll('.consultation-panel');
@@ -64,20 +78,6 @@ function togglePanel(button) {
       arrow.classList.add('active');
       openPanelAnimate(panel);
     }
-}
-
-// открытие модального окна Оформить заказ с подстановкой названия и цены
-function openOrderPopup(banner) {
-  const bannerCourseName = banner.querySelector('.course-name'),
-    bannerCourseCost = banner.querySelector('.course-cost'),
-    formOrderName = orderPopup.querySelector('.form__order-name'),
-    formOrderCost = orderPopup.querySelector('.form__order-cost');
-
-  formOrderName.value = bannerCourseName.textContent;
-  formOrderCost.value = bannerCourseCost.textContent;
-  orderPopup.classList.add('active');
-  document.querySelector('body').style.overflow = 'hidden';
-  orderPopup.addEventListener('click', closePopup);
 }
 
 accordeon.addEventListener('click', event => {
@@ -287,5 +287,54 @@ footer.addEventListener('click', event => {
   if (target.classList.contains('footer-courses-link')) {
     event.preventDefault();
     scrollLink(target);
+  }
+});
+
+// маска телефона
+$('[type=tel]').mask('+7 (000) 000-00-00');
+
+// валидация формы в окне Заказать звонок
+$('.recall-form').validate({
+  errorClass: "error-message",
+  rules: {
+    userName: "required",
+    userPhone: {
+      required: true,
+      minlength: 18
+    }
+  },
+  messages: {
+    userName: "Введите имя",
+    userPhone: {
+      required: "Введите телефон",
+      minlength: "Не корректный номер"
+    }
+  }
+});
+
+// валидация формы в окне Оформить заказ
+$('.order-form').validate({
+  errorClass: "error-message",
+  rules: {
+    userName: "required",
+    userPhone: {
+      required: true,
+      minlength: 18
+    },
+    userEmail: {
+      required: true,
+      email: true
+    }
+  },
+  messages: {
+    userName: "Введите имя",
+    userPhone: {
+      required: "Введите телефон",
+      minlength: "Не корректный номер"
+    },
+    userEmail: {
+      required: "Введите email",
+      email: "Введите email в формате name@domain.com"
+    }
   }
 });

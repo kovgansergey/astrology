@@ -146,6 +146,16 @@ a {
   transform: rotateY(180deg);
 }
 
+label.error-message {
+  position: absolute;
+  left: 50%;
+  top: 22px;
+  transform: translateX(-50%);
+  width: 100%;
+  color: red;
+  font-size: 12px;
+}
+
 @media (min-width: 992px) {
   .btn:hover {
     transform: scale(1.02);
