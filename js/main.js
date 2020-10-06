@@ -309,6 +309,29 @@ $('.recall-form').validate({
       required: "Введите телефон",
       minlength: "Не корректный номер"
     }
+  },
+  submitHandler: function(form) {
+    $.ajax({
+      type: "POST",
+      url: "../php/sendRecall.php",
+      data: $(form).serialize(),
+      success: function () {
+        Swal.fire({
+          icon: 'success',
+          title: 'Заявка отправлена',
+          text: 'Я свяжусь с Вами в ближайшее время'
+        });
+        $(form)[0].reset();
+      },
+      error: function (response) {
+        console.error(response);
+        Swal.fire({
+          icon: 'error',
+          title: 'Что-то не так!',
+          text: 'Попробуйте еще раз позднее.',
+        });
+      }
+    });
   }
 });
 
@@ -336,5 +359,28 @@ $('.order-form').validate({
       required: "Введите email",
       email: "Введите email в формате name@domain.com"
     }
+  },
+  submitHandler: function(form) {
+    $.ajax({
+      type: "POST",
+      url: "../php/sendOrder.php",
+      data: $(form).serialize(),
+      success: function () {
+        Swal.fire({
+          icon: 'success',
+          title: 'Заявка отправлена',
+          text: 'Я свяжусь с Вами в ближайшее время'
+        });
+        $(form)[0].reset();
+      },
+      error: function (response) {
+        console.error(response);
+        Swal.fire({
+          icon: 'error',
+          title: 'Что-то не так!',
+          text: 'Попробуйте еще раз позднее.',
+        });
+      }
+    });
   }
 });
