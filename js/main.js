@@ -227,3 +227,24 @@ var articlesSwiper = new Swiper('.articles-swiper', {
     }
   }
 });
+
+// плавный скролл ссылок футера
+const footer = document.querySelector('.footer');
+
+function scrollLink(item) {
+  const blockId = item.getAttribute('href').substr(1);
+
+  document.getElementById(blockId).scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+}
+
+footer.addEventListener('click', event => {
+  const target = event.target;
+  
+  if (target.classList.contains('footer-courses-link')) {
+    event.preventDefault();
+    scrollLink(target);
+  }
+});
