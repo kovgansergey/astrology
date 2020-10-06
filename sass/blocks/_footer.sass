@@ -1,0 +1,65 @@
+.footer
+  padding: 25px 0
+  background-color: #1c1c1d
+  color: #fff
+  & a
+    color: #fff
+  &-wrap
+    display: flex
+    justify-content: space-between
+  &__title
+    display: flex
+    align-items: center
+    height: 40px
+    font-weight: bold
+  &__content
+    line-height: 21px
+  &__logo
+    & .name
+      font-size: 24px
+  &-courses
+    &-wrap
+      display: flex
+    &-item
+      display: flex
+      flex-direction: column
+      &:first-child
+       margin-right: 70px
+  &__links
+    display: flex
+    align-items: center
+    height: 63px
+  &__link
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-right: 10px
+    width: 39px
+    height: 39px
+    background: url("../img/footer/border.png") no-repeat
+    border-radius: 50%
+    &:last-child
+      margin-right: 0
+@media (min-width: 992px)
+  .footer__content a:hover
+    text-decoration: underline
+@media (max-width: 1199px)
+  .footer
+    &-courses
+      &-item
+        &:first-child
+          margin-right: 35px
+@media (max-width: 991px)
+  .footer
+    &-courses
+      display: none
+@media (max-width: 767px)
+  .footer
+    padding: 40px 0
+    &-wrap
+      flex-direction: column
+    &-item
+      margin-bottom: 25px
+      &:last-child
+        margin-bottom: 0
+// @media (max-width: 576px)
