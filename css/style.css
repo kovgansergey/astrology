@@ -816,6 +816,21 @@ label.error-message {
   margin-bottom: 5px;
 }
 
+.comments__video-arrows {
+  margin: 30px auto 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.comments__video-arrow {
+  display: flex;
+  align-items: center;
+  height: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
 .comments__instagram-user {
   margin-top: 20px;
   overflow: hidden;
@@ -977,6 +992,9 @@ label.error-message {
     height: 200px;
   }
   .comments__video .video-text {
+    display: none;
+  }
+  .comments__video-arrows {
     display: none;
   }
   .comments__instagram-user {

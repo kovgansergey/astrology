@@ -100,6 +100,10 @@ var videoSwiper = new Swiper('.comments__video-swiper', {
   autoplay: {
     delay: 5000
   },
+  navigation: {
+    nextEl: '.comments__video-next',
+    prevEl: '.comments__video-prev'
+  },
   breakpoints: {
     768: {
       slidesPerView: 3,
