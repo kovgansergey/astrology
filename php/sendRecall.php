@@ -1,7 +1,5 @@
 <?php
 
-header('Content-Type: text/html; charset=utf-8');
-
 $userName = $_POST['userName'];
 $userPhone = $_POST['userPhone'];
 $userQuestion = $_POST['userQuestion'];
@@ -16,6 +14,7 @@ $mail = new PHPMailer\PHPMailer\PHPMailer();
 
 try {
     //Server settings
+    $mail->CharSet = "UTF-8";
     $mail->SMTPDebug = 0;                      // Enable verbose debug output
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtp.yandex.ru';                    // Set the SMTP server to send through
